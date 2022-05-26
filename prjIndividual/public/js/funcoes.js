@@ -1,3 +1,29 @@
+function ColocarImgNoPerfil() {
+    var heroiImg = sessionStorage.HEROI_USUARIO;
+    var imgSuper = `https://media.gettyimages.com/photos/very-definition-of-a-hero-picture-id501973090?s=612x612`;
+    if (heroiImg == 'SuperMan') {
+        fotoPerfilId.innertHTML = `
+                    <div id="fotoPerfilId" >
+            <img src="${imgSuper}" class="perfilUserImg" alt="Deu certo!!!!">
+            <h2>Biografia</h2>
+            <p><img src="../img/svg/user.svg" alt=""> <span id="b_usuario">usuário</span></p>
+            <p><img src="../img/svg/mail.svg" alt=""> <span id="b_email"></span></p>
+            <p><img src="../img/svg/star.svg" alt=""> Heroi Favorito: <span id="b_heroi"> </span></span>
+            </p>
+            <p><img src="../img/svg/date.svg" alt="">Data de entrada no forum:</span>
+            </p>
+
+        </div>
+        `
+    }
+    else {
+        alert('Não deu certo...');
+    }
+}
+
+
+
+
 // sessão
 function validarSessao() {
     // aguardar();
