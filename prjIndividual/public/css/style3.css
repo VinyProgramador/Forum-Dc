@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue';
+}
+header {
+    width: 100%;
+    height: 30vh;
+    background-color: #b11313;
+    position: relative;
+    border-bottom-right-radius: 230px;
+}
+
+header div button {
+    width: 100px;
+    height: 40px;
+    margin-left: 40px;
+    font-size: 20px;
+    border: 2px solid #fff;
+    background-color: #b11313;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 10px;
+    transition: 500ms;
+}
+
+header div button:hover {
+    transform: translate(-0%, -7%);
+    background-color: #fff;
+    color: #b11313;
+}
+
+header nav p {
+    font-size: 20px;
+    margin-top: 28px;
+    color: #fff;
+    margin-left: -290px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .logo {
+    width: 300px;
+    height: 137px;
+    margin-top: -1px;
+}
+
+nav div {
+    width: 350px;
+}
+
+nav img {
+    margin-top: 60px;
+    margin-right: 25px;
+    width: 200px;
+}
+
+.divHero{
+    width: 350px;
+    height: 430px;
+    background-color: #b11313;
+    margin: 5px auto;
+    border-radius: 10px;
+    display: none;
+}
+
+.divHero button{
+    float: right;
+    margin: 2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    background-color: #b11313;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+}
+
+.imgHero{
+    width: 320px;
+    height: 420px;
+    background-color: #fff;
+    margin: auto;
+    margin-top: 10px;
+    border: 5px #b11313 solid;
+    border-radius: 15px;
+}

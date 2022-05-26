@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | DC</title>
+    <link rel="icon" type="imagem/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/style4.css">
+    <link rel="stylesheet" href="css/stlyeErros.css">
+    <script src="./js/funcoes.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="containerNavCadastro">
+            <div class="navbarGlobal">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+            </div>
+            <div class="loginContainer">
+                <div class="loginContainerHeader">
+                    LOGIN
+                </div>
+                <form action="">
+                    <input placeholder="EMAIL" id="email_input" type="text">
+                    <input placeholder="SENHA" id="senha_input" type="password">
+                    <button type="button" onclick="entrar()">ENTRAR</button>
+                    <p style="color: #06427e;">Mostrar senha</p>
+                    <div class="check">
+                        <input type="checkbox" onclick="mostrarSenha()">
+                    </div>
+                    <div id="div_aguardar">
+                        <img src="./assets/circle-loading.gif" class="carregando" id="loading-gif">
+                        <p id="MensagemCarregando"></p>
+                    </div>
+                </form>
+            </div>
+            <div id="div_aguardar">
+                <img src="./assets/circle-loading.gif" class="carregando" id="loading-gif">
+                <p id="MensagemCarregando"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.HEROI_USUARIO = json.heroiFav;
+
+
+
+                        Swal.fire({
+                            position: 'top-start',
+                            icon: 'success',
+                            title: 'Logado com sucesso!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        setTimeout(()=>{
+                            window.location = "sistema/indexUsuario.html";
+                           
+                        },'2000') 
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        // cardErro.style.display = "none"
+    }
+
+
+    // Mostrar senha
+    function mostrarSenha() {
+        var x = document.getElementById("senha_input");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>

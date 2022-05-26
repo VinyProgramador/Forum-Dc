@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Bebas Neue';
+}
+
+body {
+    background-color: #cacae3;
+}
+
+h4 {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -18px;
+    font-weight: 100;
+}
+
+span {
+    font-weight: 700;
+}
+
+.chatUsuario {
+    width: 75vw;
+    background-color: beige;
+    filter: drop-shadow(0 0 0.75rem #c1c4c4);
+    height: 500px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chatUsuario div {
+    width: 95%;
+    height: 85%;
+    background-color: #e6e6ea;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+    filter: drop-shadow(0 0 0.75rem #a8adad);
+}
+
+.chatUsuario p {
+    width: 95%;
+    height: 30px;
+    background-color: #cacae3;
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    border: 1px solid #000;
+}
+
+.chatUsuario button {
+    padding: 3.5px;
+    display: flex;
+    margin: auto;
+    background-color: #06427e;
+    color: #fff;
+    margin-left: 2px;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+
+.chatUsuario input {
+    width: 95%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.menu {
+    width: 100vw;
+    height: 65px;
+    background-color: #06427e;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu p {
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    margin-right: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu .agora {
+    border: 3px solid #000;
+    background-color: #cacae3;
+}
+
+
+/* CSS Index usuario */
+
+.containerIndex {
+    width: 85vw;
+    height: 83vh;
+    border-radius: 5px;
+    background-color: beige;
+    margin: 20px auto;
+    filter: drop-shadow(0 0 0.75rem #a1a5a5);
+    overflow: hidden;
+}
+
+.navUser {
+    background-color: #06427e;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerIndex .logout {
+    background-color: #cacae3;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-right: 40px;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.containerIndex .userImg {
+    width: 60px;
+    height: 60px;
+    background-color: #cacae3;
+    border: 2px solid #000;
+    border-radius: 60px;
+    cursor: pointer;
+    margin-left: 35px;
+}
+
+.containerIndex .userImg img {
+    margin: 42.5px auto;
+    margin-left: 40px;
+}
+
+.newsMarvel {
+    width: 80vw;
+    height: 63vh;
+    background-color: #e6e6ea;
+    margin: 30px auto;
+    display: flex;
+    border-radius: 5px;
+    overflow-y: scroll;
+    filter: drop-shadow(0 0 0.75rem #afb4b4);
+    display: flex;
+}
+
+.botao {
+    background-color: #06427e;
+    display: inline-block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 8px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto';
+    text-align: center;
+    font-size: 50px;
+}
+
+.botao:hover {
+    background-color: #06427e;
+    font-family: 'Roboto';
+}
+
+
+/* Dashboard */
+
+.container {
+    max-width: 1300px;
+    height: 60vh;
+    margin: 10px auto;
+    display: flex;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+
+.containerGraficos {
+    width: 600px;
+    height: 350px;
+    flex: 1 1 350;
+    background-color: #f5f5f5;
+    margin: auto;
+    border: 2px solid #cacae3;
+    border-radius: 5px;
+}
+
+.containerGraficos div {
+    text-align: center;
+    margin-top: 65px;
+}

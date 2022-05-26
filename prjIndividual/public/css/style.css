@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Bebas Neue';
+}
+
+h3 {
+    font-size: 35px;
+    margin: 10px 10px 5px 25px;
+    color: #09223c;
+}
+
+.container {
+    background-color: #06427e;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.containerTeste {
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+    background: #e3e1e1;
+    margin: auto;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 0.75rem #2a2b2b);
+    overflow: hidden;
+}
+
+.containerTeste h1 {
+    width: 430px;
+    height: 200px;
+    font-size: 35px;
+    margin-left: 30px;
+    margin-top: 190px;
+    color: #09223c;
+}
+
+.container .teste {
+    float: right;
+    width: 30vw;
+    height: 90vh;
+    background-color: #e3e1e1;
+}
+
+.botao {
+    margin: 30px auto;
+    margin-left: 30px;
+}
+
+.botao button {
+    width: 155px;
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    background-color: #06427e;
+    color: #fff;
+    font-weight: 200;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 800ms;
+    margin-right: 5px;
+}
+
+.botao button:hover {
+    background-color: #fff;
+    border: 2px solid #06427e;
+    color: #06427e;
+    transform: translate(-0%, -8%);
+}
+
+.container .teste div {
+    float: right;
+    width: 35vw;
+    height: 50vh;
+    background-color: #e3e1e1;
+    margin: 140px auto;
+    background-image: url(../img/superman_459Wx300H_589104907a0b05.70849485-removebg-preview.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container .teste2 div {
+    float: right;
+    width: 15vw;
+    height: 62vh;
+    background-color: #e3e1e1;
+    margin: 140px auto;
+    background-image: url(../img/batman_char-pop_58910497bad9c5.66936402-removebg-preview.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container .teste3 div {
+    float: right;
+    width: 18vw;
+    height: 62vh;
+    background-color: #e3e1e1;
+    margin: 140px auto;
+    background-image: url(../img/wonderwoman_361Wx675H_5891047fd4ced7.64432383.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.informationsHero {
+    background-color: #fff;
+    float: left;
+    width: 50vw;
+    height: 77vh;
+    margin: 15px 10px 10px 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 0.75rem #a0a4a4);
+}
+
+.informationsHero .text {
+    margin: 30px 10px 10px 25px;
+}
+
+.informationsHero .text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #09223c;
+}
+
+.informationsHero .text p {
+    text-align: justify;
+    width: 600px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.imgsFilmes {
+    width: 45vw;
+    height: 40vh;
+    background-color: #06427e;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 45px;
+}
+
+.imgsFilmes img {
+    width: 170px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 500ms;
+    border: 2px solid #f5f5f5;
+}
+
+.imgsFilmes img:hover {
+    transform: scale(105%, 105%);
+}
+
+.elemento {
+    width: 99.6%;
+    height: 60px;
+    background-color: #06427e;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+}
+
+.elemento p {
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.elemento .agora {
+    border: 3px solid #000;
+    background-color: #cacae3;
+}
+
+
+/* Scrool Bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #06427e;
+    border-radius: 3px;
+}

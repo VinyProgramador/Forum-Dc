@@ -1,0 +1,83 @@
+/* LOGIN */
+
+.banner .container .card {
+    background-color: #e5e5e5;
+    height: fit-content;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    color: palevioletred;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card h2 {
+    font-size: 30px;
+}
+
+.card h4 {
+    font-size: 16px;
+}
+
+.banner #div_erros_login {
+    margin-top: 15px;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* FORMULARIO */
+
+.alerta_erro {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card_erro {
+    display: none;
+    background-color: #f5f5f5;
+    color: #b11313;
+    width: 230px;
+    border-radius: 2px;
+    border: #b11313 2px solid;
+    padding: 15px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#loading-gif {
+    width: 50px;
+    display: none;
+    position: absolute;
+}
+
+.carregando {
+    height: 50px;
+    margin-top: 30px;
+    width: 50px;
+    margin-left: 625px;
+    margin-top: 215px;
+    border-radius: 50px;
+    display: none;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #b11313;
+}

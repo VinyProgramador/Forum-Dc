@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | DC</title>
+    <link rel="icon" type="imagem/png" href="../img/logo.png" />
+    <link rel="stylesheet" href="../css/style5.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="containerGraficos">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+            <div>
+                <h1>Quantidade Usuarios Cadastrados</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ad expedita adipisci consequatur nulla assumenda, dicta deserunt! Corporis, explicabo error vero molestias, nam aut minima saepe, exercitationem blanditiis aspernatur reiciendis.</p>
+            </div>
+        </div>
+        <div class="containerGraficos">
+            <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+            <div>
+                <h1>Herois Mais Escolhidos</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ad expedita adipisci consequatur nulla assumenda, dicta deserunt! Corporis, explicabo error vero molestias, nam aut minima saepe, exercitationem blanditiis aspernatur reiciendis.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="menu">
+        <a href="../dashboard/mural.html">
+            <p>
+                <img src="../img/svg/chat.svg" alt="">
+            </p>
+        </a>
+        <a href="indexUsuario.html">
+            <p>
+                <img src="../img/svg/home.svg" alt="">
+            </p>
+        </a>
+        <a href="dashboard.html">
+            <p class="agora">
+                <img src="../img/svg/grafico.svg" alt="">
+
+            </p>
+        </a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var myChart = new Chart("myChart", {
+        type: "line",
+        data: {},
+        options: {}
+    });
+
+    var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+    var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+    new Chart("myChart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: "#06427e",
+                borderColor: "rgba(0,0,0,0.1)",
+                data: yValues
+            }]
+        },
+
+
+        options: {
+            title: {
+                display: true,
+                text: "Quantidade de usuarios cadastrados."
+            }
+        }
+    });
+
+
+
+    // garfico de barra 
+    var xValues = ["Homem-Aranha", "Sufista-Prateado", "Homem-de-Ferro", "Feiticeira-escarlate", "Hulk"];
+    var yValues = [55, 49, 44, 24, 15, 1];
+    var barColors = ["#06427e", "#06427e", "#06427e", "#06427e", "#06427e"];
+
+    new Chart("myChart2", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: "Herois mais escilhidos para perfil."
+            }
+        }
+    });
+</script>

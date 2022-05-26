@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue';
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+header {
+    width: 100%;
+    background-color: #b11313;
+    height: 80px;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+header h1 {
+    padding: 25px;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: -50px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.modal {
+    width: 400px;
+    height: 60px;
+    background-color: #b11313;
+    margin: 30px auto;
+    border-radius: 5px;
+    color: #fff;
+    filter: drop-shadow(0 0 3px #bbbaba);
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.text h3 {
+    margin-top: 10px;
+}
+
+.modal button {
+    height: 20px;
+    width: 20px;
+    float: right;
+    margin: 5px;
+    border-radius: 10px;
+    color: #b11313;
+    border: none;
+    text-align: center;
+    transition: 400ms;
+}
+
+.modal button:hover {
+    background: #b11313;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.products {
+    width: 99%;
+    height: 43vh;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    display: flex;
+    background-color: #bdc0c0;
+    margin: 60px auto;
+    overflow-y: scroll;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+ul li {
+    display: flex;
+    width: 200px;
+    height: 290px;
+    background: #999;
+    position: relative;
+    float: left;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+ul li img {
+    width: 190px;
+    height: 280px;
+    background-color: #fff;
+    margin: auto;
+}
+
+ul li div.footer {
+    width: 100%;
+    padding: 8px 5px;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.96);
+}
+
+ul li div.footer h2 {
+    font-size: 18px;
+    color: #336699;
+    margin: 0;
+    padding: 0;
+}
+
+ul li div.footer button {
+    background-color: #8f9192;
+    color: #fff;
+    cursor: default;
+    border: none;
+    padding: 2px;
+    border-radius: 2px;
+}
