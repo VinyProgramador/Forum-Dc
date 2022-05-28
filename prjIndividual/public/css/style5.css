@@ -128,7 +128,7 @@ span {
 }
 
 .containerIndex .logout {
-    background-color: #cacae3;
+    background-color: #fff;
     width: 30px;
     height: 30px;
     border-radius: 50px;
@@ -140,7 +140,7 @@ span {
     cursor: pointer;
 }
 
-.containerIndex .userImg {
+.containerIndex .perfilUserImg {
     width: 60px;
     height: 60px;
     background-color: #cacae3;
@@ -150,7 +150,7 @@ span {
     margin-left: 35px;
 }
 
-.containerIndex .userImg img {
+.containerIndex .perfilUserImg img {
     margin: 42.5px auto;
     margin-left: 40px;
 }

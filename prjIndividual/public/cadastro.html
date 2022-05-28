@@ -15,27 +15,21 @@
 </head>
 
 <body>
-    <!-- Alertas -->
-
     <div class="container">
         <div class="containerNavCadastro">
             <div class="navbarGlobal">
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="cadastro.html">Cadastro</a></li>
+                        <li><a class="agora" href="cadastro.html">Cadastro</a></li>
                         <li><a href="login.html">Login</a></li>
                     </ul>
             </div>
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
             <div class="cadastroContainer">
                 <div class="cadastroContainerHeader">
-                    CADASTRO
+                    <img src="img/logo.png" alt="">
                 </div>
+
                 <form action="">
                     <input id="nome_input" placeholder="NOME" type="text">
                     <input onkeyup="verificarEmail()" id="email_input" placeholder="EMAIL" type="email">
@@ -45,36 +39,29 @@
                         <select id="inputSelect">
                             <option value=""></option>
                             <option value="SuperMan">SuperMan</option>
-                            <option value="Senhor-Fantastico">Senhor-Fantastico</option>
-                            <option value="Surfista-Prateado">Surfista-Prateado</option>
-                            <option value="Cavalheiro-da-Lua">Cavalheiro-da-Lua</option>
-                            <option value="Soul-Storm">Soul-Storm</option>
-                            <option value="America-Chaves">America-Chaves</option>
-                            <option value="Fenix-Negra">Fenix-Negra</option>
-                            <option value="She-Hulk">She-Hulk</option>
+                            <option value="Batman">Batman</option>
+                            <option value="Wonder-Woman">Wonder-Woman</option>
+                            <option value="Lanterna-Verde">Lanterna-Verde</option>
+                            <option value="Cyborg">Cyborg</option>
+                            <option value="Robin">Robin</option>
+                            <option value="Aquaman">Aquaman</option>
+                            <option value="Super-Girl">Super-Girl</option>
+                            <option value="Estelar">Estelar</option>
+                            <option value="Zatana">Zatana</option>
                         </select>
                     </label>
                     <input id="senha_input" onkeyup="ValidaSenha()" placeholder="SENHA" type="password">
                     <p id="avisoInputSenha"></p>
-                    <input id="confirmacao_senha_input" onkeyup="ValidaConfirmarSenha()" placeholder="CONFIRMAR SENHA"
-                        id="myInput2" type="password">
+                    <input id="confirmacao_senha_input" onkeyup="ValidaConfirmarSenha()" placeholder="CONFIRMAR SENHA" id="myInput2" type="password">
                     <p id="avisoInputConfirmarSenha"></p>
-                    <button type="button" onclick="cadastrar()">CADASTRO</button>
-                    <p style="color: #06427e;">Mostrar senha</p>
+                    <button type="button" onclick="cadastrar()">CADASTRAR</button>
+                    <p style="color: #06427e; font-size: 13px;">Mostrar senha</p>
                     <div class="check">
-                        <input type="checkbox" onclick="mostrarSenha()">
+                        <input id="clicar" style="cursor: pointer;height: 15px;" type="checkbox" onclick="mostrarSenha()">
                     </div>
                 </form>
-            </div>
-
-            <div id="div_aguardar" class="loading-div">
-                <img src="assets/circle-loading.gif" id="loading-gif">
-            </div>
-
-            <div id="div_erros_login">
 
             </div>
-
         </div>
     </div>
 
@@ -117,7 +104,7 @@
                 heroiServer: heroiVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
@@ -138,7 +125,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             finalizarAguardar();
         });

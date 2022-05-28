@@ -7,33 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DC | Chat</title>
-
     <link rel="stylesheet" href="./dashboards.css">
     <script src="../js/funcoes.js"></script>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body onload="validarSessao(), atualizarFeed(), ColocarImgNoPerfil()">
+<body onload="validarSessao(), atualizarFeed(), imgDePerfil()">
 
     <div class="infoUser">
 
         <div class="perfilUser">
-            <div id="fotoPerfilId">
-                <img class="perfilUserImg" alt="">
+            <div>
+                <span id="mudarImgId">
+                    <img class="perfilUserImg" alt="">
+                </span>
                 <h2>Biografia</h2>
                 <p><img src="../img/svg/user.svg" alt=""> <span id="b_usuario">usuário</span></p>
                 <p><img src="../img/svg/mail.svg" alt=""> <span id="b_email"></span></p>
                 <p><img src="../img/svg/star.svg" alt=""> Heroi Favorito: <span id="b_heroi"> </span></span>
                 </p>
-                <p><img src="../img/svg/date.svg" alt="">Data de entrada no forum:</span></p>
-
+                <!-- <p><img src="../img/svg/date.svg" alt="">Data de entrada no forum:</span> -->
+                </p>
             </div>
 
             <div class="footer">
+                <button>?</button>
             </div>
         </div>
 
@@ -99,13 +98,26 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(corpo)
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
+                Swal.fire({
+                    title: 'Mensagem enviada com sucesso!',
+                    showConfirmButton: false,
+                    icon: 'success',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    },
+                })
+                setTimeout(() => {
+                    window.location = "/dashboard/mural.html";
+
+                }, '1000')
                 limparFormulario();
                 finalizarAguardar();
             } else if (resposta.status == 404) {
@@ -113,7 +125,7 @@
             } else {
                 throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
             finalizarAguardar();
         });
@@ -137,7 +149,7 @@
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(function (resposta) {
+        }).then(function(resposta) {
 
             if (resposta.ok) {
                 window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
@@ -147,14 +159,14 @@
             } else {
                 throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
     }
 
     function atualizarFeed() {
         //aguardar();
-        fetch("/avisos/listar").then(function (resposta) {
+        fetch("/avisos/listar").then(function(resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feed_container");
@@ -164,7 +176,7 @@
                     throw "Nenhum resultado encontrado!!";
                 }
 
-                resposta.json().then(function (resposta) {
+                resposta.json().then(function(resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
                     var feed = document.getElementById("feed_container");
@@ -219,7 +231,7 @@
             } else {
                 throw ('Houve um erro na API!');
             }
-        }).catch(function (resposta) {
+        }).catch(function(resposta) {
             console.error(resposta);
             // finalizarAguardar();
         });
@@ -239,5 +251,4 @@
 
         return false;
     }
-
 </script>

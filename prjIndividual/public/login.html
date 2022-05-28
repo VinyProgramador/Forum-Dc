@@ -27,15 +27,15 @@
             </div>
             <div class="loginContainer">
                 <div class="loginContainerHeader">
-                    LOGIN
+                    <img src="img/logo.png" alt="">
                 </div>
                 <form action="">
                     <input placeholder="EMAIL" id="email_input" type="text">
                     <input placeholder="SENHA" id="senha_input" type="password">
                     <button type="button" onclick="entrar()">ENTRAR</button>
-                    <p style="color: #06427e;">Mostrar senha</p>
+                    <p style="color: #06427e; font-size: 13px;">Mostrar senha</p>
                     <div class="check">
-                        <input type="checkbox" onclick="mostrarSenha()">
+                        <input type="checkbox" style="cursor: pointer;height: 15px;" onclick="mostrarSenha()">
                     </div>
                     <div id="div_aguardar">
                         <img src="./assets/circle-loading.gif" class="carregando" id="loading-gif">
@@ -81,7 +81,7 @@
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
-        }).then(function (resposta) {
+        }).then(function(resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
@@ -98,17 +98,17 @@
 
 
 
-                        Swal.fire({
-                            position: 'top-start',
-                            icon: 'success',
-                            title: 'Logado com sucesso!',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        setTimeout(()=>{
-                            window.location = "sistema/indexUsuario.html";
-                           
-                        },'2000') 
+                    Swal.fire({
+                        position: 'top-start',
+                        icon: 'success',
+                        title: 'Logado com sucesso!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    setTimeout(() => {
+                        window.location = "sistema/indexUsuario.html";
+
+                    }, '2000')
                 });
 
             } else {
@@ -121,7 +121,7 @@
                 });
             }
 
-        }).catch(function (erro) {
+        }).catch(function(erro) {
             console.log(erro);
         })
 

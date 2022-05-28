@@ -1,27 +1,64 @@
-function ColocarImgNoPerfil() {
-    var heroiImg = sessionStorage.HEROI_USUARIO;
-    var imgSuper = `https://media.gettyimages.com/photos/very-definition-of-a-hero-picture-id501973090?s=612x612`;
-    if (heroiImg == 'SuperMan') {
-        fotoPerfilId.innertHTML = `
-                    <div id="fotoPerfilId" >
-            <img src="${imgSuper}" class="perfilUserImg" alt="Deu certo!!!!">
-            <h2>Biografia</h2>
-            <p><img src="../img/svg/user.svg" alt=""> <span id="b_usuario">usuário</span></p>
-            <p><img src="../img/svg/mail.svg" alt=""> <span id="b_email"></span></p>
-            <p><img src="../img/svg/star.svg" alt=""> Heroi Favorito: <span id="b_heroi"> </span></span>
-            </p>
-            <p><img src="../img/svg/date.svg" alt="">Data de entrada no forum:</span>
-            </p>
+function imgDePerfil() {
+    var heroiFavorito = sessionStorage.HEROI_USUARIO;
+    var img1 = 'https://i0.wp.com/cebolaverde.com.br/wp-content/uploads/2020/07/Clark-Kent.jpg?resize=585%2C585&ssl=1'
+    var img2 = 'https://img.quizur.com/f/img61bfa9f3b28435.76703213.jpg?lastEdited=1639950844'
+    var img3 = 'https://www.planocritico.com/wp-content/uploads/2017/06/wonder-woman-cronologia-plano-critico-mulher-maravilha-.jpg'
+    var img4 = 'http://pm1.narvii.com/6318/a4764bbd64544331179644724d1e8f4957b3f506_00.jpg';
+    var img5 = 'https://i.pinimg.com/474x/ef/84/26/ef8426d4ce91e032268399172d317c23.jpg';
+    var img6 = 'https://64.media.tumblr.com/dd3bcc2984261045111cf32bffb2550a/bbf4b1a712f447be-79/s540x810/08bd3439e424b2027b0eb7986dc7f3d769d310e1.jpg';
+    var img7 = 'https://ovicio.com.br/wp-content/uploads/2020/08/20200814-aquaman-1024x576.jpg';
+    var img8 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb-in7-6GiE9F1vCiFXVI5EOYjvogpfYHnniq-0YM8NPx6tat9Up3FNWI5Zlv7VlRdJJ0&usqp=CAU';
+    var img9 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2_7ufHQJQEHaRpJ0kFT1MR9abDPC8UJwMVhrt7i50cNZ-tO2Gje7SpqHhphNq4bT3Qtw&usqp=CAU';
+    var img10 = 'http://pm1.narvii.com/6900/14375c6f2550bc2afa9cb6e30564ba7029520989r1-750-511v2_uhq.jpg';
 
-        </div>
+
+
+    var listaHeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    for (contador = 0; contador <= listaHeros.length; contador++) {
+        if (heroiFavorito == 'SuperMan') {
+            mudarImgId.innerHTML = `
+         <img src="${img1}" class="perfilUserImg" alt="">
         `
-    }
-    else {
-        alert('Não deu certo...');
+        } else if (heroiFavorito == 'Batman') {
+            mudarImgId.innerHTML = `
+        <img src="${img2}" class="perfilUserImg" alt="">
+       `
+        } else if (heroiFavorito == 'Wonder-Woman') {
+            mudarImgId.innerHTML = `
+        <img src="${img3}" class="perfilUserImg" alt="">
+       `
+        } else if (heroiFavorito == 'Lanterna-Verde') {
+            mudarImgId.innerHTML = `
+        <img src="${img4}" class="perfilUserImg" alt="">
+       `
+        } else if (heroiFavorito == 'Cyborg') {
+            mudarImgId.innerHTML = `
+        <img src="${img5}" class="perfilUserImg" alt="">
+       `
+        } else if (heroiFavorito == 'Robin') {
+            mudarImgId.innerHTML = `
+        <img src="${img6}" class="perfilUserImg" alt="">
+       `
+        } else if (heroiFavorito == 'Aquaman') {
+            mudarImgId.innerHTML = `
+        <img src="${img7}" class="perfilUserImg" alt="">
+       `
+        } else if (heroiFavorito == 'Super-Girl') {
+            mudarImgId.innerHTML = `
+        <img src="${img8}" class="perfilUserImg" alt="">
+       `
+        } else if (heroiFavorito == 'Estelar') {
+            mudarImgId.innerHTML = `
+        <img src="${img9}" class="perfilUserImg" alt="">
+       `
+        } else {
+            mudarImgId.innerHTML = `
+        <img src="${img10}" class="perfilUserImg" alt="">
+       `
+        }
     }
 }
-
-
 
 
 // sessão
@@ -44,7 +81,6 @@ function validarSessao() {
         b_email.innerHTML = email;
         b_heroi.innerHTML = heroiFavorito;
 
-
         // finalizarAguardar();
     } else {
         window.location = "../login.html";
@@ -60,8 +96,7 @@ function limparSessao() {
 
 // carregamento(loading)
 
-function aguardar() {
-}
+function aguardar() {}
 
 
 
