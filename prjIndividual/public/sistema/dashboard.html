@@ -33,7 +33,7 @@
 
 
     <div class="menu">
-        <a href="../dashboard/mural.html">
+        <a href="mural.html">
             <p>
                 <img src="../img/svg/chat.svg" alt="">
             </p>
@@ -55,59 +55,83 @@
 </html>
 
 <script>
-    var myChart = new Chart("myChart", {
-        type: "line",
-        data: {},
-        options: {}
-    });
+    window.onload = obterDadosGrafico();
+    // verificar_autenticacao();
 
-    var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-    var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+    function obterDadosGrafico() {
 
-    new Chart("myChart", {
-        type: "line",
-        data: {
-            labels: xValues,
+        fetch(`/dash/dash/`, {
+                cache: 'no-store'
+            }).then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+                        plotarGrafico(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
             datasets: [{
-                backgroundColor: "#06427e",
-                borderColor: "rgba(0,0,0,0.1)",
-                data: yValues
+                yAxisID: 'y-users',
+                label: 'Quantidade de usuarios cadastrados.',
+                borderColor: '#09223c',
+                backgroundColor: '#06427e',
+                fill: true,
+                data: []
             }]
-        },
+        };
 
-
-        options: {
-            title: {
-                display: true,
-                text: "Quantidade de usuarios cadastrados."
-            }
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.datasets[i].data.push(registro.QtdUsuarios);
         }
-    });
+        dados.labels[0] = ('Usuarios');
 
 
 
-    // garfico de barra 
-    var xValues = ["Homem-Aranha", "Sufista-Prateado", "Homem-de-Ferro", "Feiticeira-escarlate", "Hulk"];
-    var yValues = [55, 49, 44, 24, 15, 1];
-    var barColors = ["#06427e", "#06427e", "#06427e", "#06427e", "#06427e"];
 
-    new Chart("myChart2", {
-        type: "bar",
-        data: {
-            labels: xValues,
-            datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-            }]
-        },
-        options: {
-            legend: {
-                display: false
-            },
-            title: {
-                display: true,
-                text: "Herois mais escilhidos para perfil."
+        console.log(JSON.stringify(dados));
+
+        var ctx = myChart.getContext('2d');
+        window.graficoLine = Chart.Bar(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 500
+                },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-users',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 100,
+                            min: 0
+                        }
+                    }]
+                }
             }
-        }
-    });
+        });
+    }
 </script>
