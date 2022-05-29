@@ -13,6 +13,8 @@ var usuarioRouter = require("./src/routes/usuarios");
 var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
 var dashRouter = require("./src/routes/dash");
+var dashRouter2 = require("./src/routes/dash2");
+
 
 
 app.use(express.json());
@@ -26,8 +28,10 @@ app.use("/usuarios", usuarioRouter);
 app.use("/avisos", avisosRouter);
 app.use("/medidas", medidasRouter);
 app.use("/dash", dashRouter);
+app.use("/dash2", dashRouter2);
 
-app.listen(PORTA, function () {
+
+app.listen(PORTA, function() {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
     Você está rodando sua aplicação em Ambiente de ${process.env.AMBIENTE_PROCESSO} \n
     \t\tSe "desenvolvimento", você está se conectando ao banco LOCAL (MySQL Workbench). \n

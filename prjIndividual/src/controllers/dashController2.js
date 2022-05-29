@@ -1,13 +1,13 @@
-var dashModel = require("../models/dashModel");
+var dashModel = require("../models/dashModel2");
 
-function buscarQtdUsuarios(req, res) {
+function buscarHeroisDiferentes(req, res) {
 
     const limite_linhas = 7;
 
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    dashModel.buscarQtdUsuarios().then(function(resultado) {
+    dashModel.buscarHeroisDiferentes().then(function(resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -21,5 +21,5 @@ function buscarQtdUsuarios(req, res) {
 }
 
 module.exports = {
-    buscarQtdUsuarios
+    buscarHeroisDiferentes
 }
