@@ -9,6 +9,7 @@
     <title>DC | Chat</title>
     <link rel="stylesheet" href="./dashboards.css">
     <script src="../js/funcoes.js"></script>
+    <script src="../js/modals.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -22,6 +23,16 @@
                 <span id="mudarImgId">
                     <img class="perfilUserImg" alt="">
                 </span>
+                <div id="modalInfoId" class="modalInfo">
+                    <button onclick="fecharModalInfo()">X</button>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos delectus voluptas praesentium porro deleniti architecto ipsum nemo sint, tempora dolore. Ad ipsum quidem numquam sunt, cumque modi doloremque dolores doloribus.</p>
+                    </div>
+                </div>
+
+                <div id="modalConfigId" class="modalConfig">
+                    <button onclick="fecharModalConfig()">X</button>
+                </div>
                 <h2>Biografia</h2>
                 <p><img src="../img/svg/user.svg" alt=""> <span id="b_usuario">usuário</span></p>
                 <p><img src="../img/svg/mail.svg" alt=""> <span id="b_email"></span></p>
@@ -33,6 +44,9 @@
 
             <div class="footer">
                 <button>?</button>
+                <button onclick="modalInfo()">!</button>
+                <button onclick="modalConfig()"><img src="../img/svg/config.svg" alt=""></button>
+
             </div>
         </div>
 

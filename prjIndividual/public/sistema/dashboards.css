@@ -130,7 +130,6 @@ body {
     border-radius: 5px;
     margin-left: 20px;
     filter: drop-shadow(0 0 0.75rem #babfbf);
-    overflow: hidden;
 }
 
 .perfilUser {
@@ -140,7 +139,6 @@ body {
     justify-content: space-around;
     margin-top: 15px;
     text-align: center;
-    cursor: pointer;
 }
 
 .perfilUserImg {
@@ -180,7 +178,7 @@ body {
     background-color: #06427e;
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 .footer button {
@@ -189,13 +187,142 @@ body {
     height: 30px;
     border-radius: 50px;
     margin-right: 10px;
+    margin-left: 10px;
     border: 2px solid #fff;
     cursor: pointer;
     color: #fff;
+    justify-content: center;
+}
+
+.footer button img {
+    margin-top: 3.5px;
 }
 
 .footer button:hover {
     background-color: #fff;
     color: #06427e;
     border: 2px solid #8bb7e3;
+}
+
+
+/* Modals info tela chat */
+
+
+/* Modal de informações */
+
+.modalInfo {
+    position: absolute;
+    background-color: #f5f5f5;
+    width: 30vw;
+    height: 35vh;
+    float: left;
+    margin-left: -80px;
+    border-radius: 5px;
+    margin-top: 200px;
+    filter: drop-shadow(0 0 0.45rem #babfbf);
+    display: block;
+    transition: 500ms;
+    animation: animacaoModalInfo;
+    animation-duration: 500ms;
+}
+
+.modalInfo div {
+    background-color: #d7dddd;
+    width: 85%;
+    height: 80%;
+    margin: 30px auto;
+    border-radius: 5px;
+    overflow-y: scroll;
+    font-size: 10px;
+}
+
+@keyframes animacaoModalInfo {
+    from {
+        opacity: 2;
+    }
+    from {
+        opacity: 0;
+    }
+}
+
+.modalInfo button {
+    display: flex;
+    float: right;
+    margin: 8px 5px 3px 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #06427e;
+    color: #06427e;
+    cursor: pointer;
+}
+
+.modalInfo button:hover {
+    color: #fff;
+    background-color: #06427e;
+}
+
+
+/* Modal de Configurações */
+
+.modalConfig {
+    position: absolute;
+    background-color: #f5f5f5;
+    width: 30vw;
+    height: 35vh;
+    float: left;
+    margin-left: -80px;
+    border-radius: 5px;
+    margin-top: 200px;
+    filter: drop-shadow(0 0 0.45rem #babfbf);
+    display: none;
+    transition: 500ms;
+    animation: animacaoModalConfig;
+    animation-duration: 500ms;
+}
+
+@keyframes animacaoModalConfig {
+    from {
+        opacity: 2;
+    }
+    from {
+        opacity: 0;
+    }
+}
+
+.modalConfig button {
+    display: flex;
+    float: right;
+    margin: 3px 3px 3px 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #06427e;
+    color: #06427e;
+    cursor: pointer;
+}
+
+.modalConfig button:hover {
+    color: #fff;
+    background-color: #06427e;
+}
+
+
+/* Scrool Bar */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #06427e;
+    border-radius: 3px;
 }

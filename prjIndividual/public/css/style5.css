@@ -118,6 +118,11 @@ span {
     overflow: hidden;
 }
 
+.containerIndex .logo {
+    height: 10vh;
+    margin-left: 30px;
+}
+
 .navUser {
     background-color: #06427e;
     width: 100%;
@@ -128,7 +133,7 @@ span {
 }
 
 .containerIndex .logout {
-    background-color: #fff;
+    background-color: #06427e;
     width: 30px;
     height: 30px;
     border-radius: 50px;
@@ -136,8 +141,9 @@ span {
     justify-content: center;
     display: flex;
     margin-right: 40px;
-    border: 2px solid #000;
+    border: 2px solid #fff;
     cursor: pointer;
+    color: #f5f5f5;
 }
 
 .containerIndex .perfilUserImg {

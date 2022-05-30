@@ -56,6 +56,8 @@
 
 <script>
     window.onload = obterDadosGrafico();
+    window.onload = obterDadosGrafico2();
+
     // verificar_autenticacao();
 
     function obterDadosGrafico() {
@@ -126,12 +128,34 @@
                         id: 'y-users',
                         ticks: {
                             beginAtZero: true,
-                            max: 100,
+                            max: 50,
                             min: 0
                         }
                     }]
                 }
             }
         });
+    }
+
+
+    // grafico2
+    function obterDadosGrafico2() {
+
+        fetch(`/dash2/dash2/`, {
+                cache: 'no-store'
+            }).then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+                        plotarGrafico(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
 </script>
