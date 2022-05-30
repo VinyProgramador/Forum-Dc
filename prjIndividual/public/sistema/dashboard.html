@@ -181,7 +181,73 @@ var dados = {
         backgroundColor: '#06427e',
         fill: true,
         data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'SuperMan',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Wonder-Woman',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Lanterna-Verde',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Cyborg',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Robin',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Aquaman',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Super-Girl',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Zatana',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
     }
+
+
 
 ]
 };
@@ -192,8 +258,33 @@ for (i = 0; i < resposta.length; i++) {
 
     if(registro.HeroiMaisEscolhido == "Batman"){
         dados.datasets[0].data.push(registro.max_heroi);
-    }else {
+    }else if(registro.HeroiMaisEscolhido == "Estelar") {
         dados.datasets[1].data.push(registro.max_heroi);
+    }
+    else if(registro.HeroiMaisEscolhido == "SuperMan"){
+        dados.datasets[2].data.push(registro.max_heroi);
+    }
+    else if(registro.HeroiMaisEscolhido == "Wonder-Woman"){
+        dados.datasets[3].data.push(registro.max_heroi);
+    }
+    else if(registro.HeroiMaisEscolhido == "Lanterna-Verde"){
+        dados.datasets[4].data.push(registro.max_heroi);
+    }
+    else if(registro.HeroiMaisEscolhido == "Cyborg"){
+        dados.datasets[5].data.push(registro.max_heroi);
+    }
+    else if(registro.HeroiMaisEscolhido == "Robin"){
+        dados.datasets[6].data.push(registro.max_heroi);
+    }
+    else if(registro.HeroiMaisEscolhido == "Aquaman"){
+        dados.datasets[7].data.push(registro.max_heroi);
+    }
+    else if(registro.HeroiMaisEscolhido == "Super-Girl"){
+        dados.datasets[8].data.push(registro.max_heroi);
+    }
+    else {
+        dados.datasets[9].data.push(registro.max_heroi);
+
     }
 
 
@@ -227,7 +318,7 @@ window.graficoLine = Chart.Bar(ctx, {
                 id: 'y-users',
                 ticks: {
                     beginAtZero: true,
-                    max: 50,
+                    max: 10,
                     min: 0
                 }
             }]
