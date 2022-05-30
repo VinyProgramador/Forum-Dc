@@ -218,9 +218,9 @@ body {
     float: left;
     margin-left: -80px;
     border-radius: 5px;
-    margin-top: 200px;
+    margin-top: 100px;
     filter: drop-shadow(0 0 0.45rem #babfbf);
-    display: block;
+    display: none;
     transition: 500ms;
     animation: animacaoModalInfo;
     animation-duration: 500ms;

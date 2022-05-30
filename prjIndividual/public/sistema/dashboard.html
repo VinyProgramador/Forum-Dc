@@ -87,7 +87,7 @@
             labels: [],
             datasets: [{
                 yAxisID: 'y-users',
-                label: 'Quantidade de usuarios cadastrados.',
+                label: 'Quantidade de usuarios cadastrados',
                 borderColor: '#09223c',
                 backgroundColor: '#06427e',
                 fill: true,
@@ -139,23 +139,101 @@
 
 
     // grafico2
-    function obterDadosGrafico2() {
+function obterDadosGrafico2() {
 
-        fetch(`/dash2/dash2/`, {
-                cache: 'no-store'
-            }).then(function(response) {
-                if (response.ok) {
-                    response.json().then(function(resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        resposta.reverse();
-                        plotarGrafico(resposta);
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function(error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+fetch(`/dash2/dash2/`, {
+        cache: 'no-store'
+    }).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(resposta) {
+                console.log(resposta);
+                // resposta.reverse();
+                plotarGrafico2(resposta);
             });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+    .catch(function(error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+}
+
+function plotarGrafico2(resposta) {
+console.log('iniciando plotagem do gráfico...');
+var xValues = ["Herois mais escolhidos"];
+
+var dados = {
+    labels: [xValues],
+
+    datasets: [{
+        yAxisID: 'y-users',
+        label: 'Batman',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
+    },
+    {
+        yAxisID: 'y-users',
+        label: 'Estelar',
+        borderColor: '#09223c',
+        backgroundColor: '#06427e',
+        fill: true,
+        data: []
     }
+
+]
+};
+
+for (i = 0; i < resposta.length; i++) {
+    var registro = resposta[i];
+    console.log(registro);
+
+    if(registro.HeroiMaisEscolhido == "Batman"){
+        dados.datasets[0].data.push(registro.max_heroi);
+    }else {
+        dados.datasets[1].data.push(registro.max_heroi);
+    }
+
+
+}
+dados.labels[0] = ('Herois');
+
+
+
+
+console.log(JSON.stringify(dados));
+
+var ctx = myChart2.getContext('2d');
+window.graficoLine = Chart.Bar(ctx, {
+    data: dados,
+    options: {
+        responsive: true,
+        animation: {
+            duration: 500
+        },
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+            display: false,
+            text: 'Dados capturados'
+        },
+        scales: {
+            yAxes: [{
+                type: 'linear',
+                display: true,
+                position: 'left',
+                id: 'y-users',
+                ticks: {
+                    beginAtZero: true,
+                    max: 50,
+                    min: 0
+                }
+            }]
+        }
+    }
+});
+}
+
 </script>

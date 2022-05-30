@@ -5,10 +5,10 @@ function buscarHeroisDiferentes() {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `SELECT heroiFav AS 'HeroiMaisEscolhido' FROM usuario  group by heroiFav;`;
+        instrucaoSql = `SELECT COUNT(heroiFav) AS 'max_heroi', heroiFav AS 'HeroiMaisEscolhido' FROM usuario  group by heroiFav;`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `SELECT heroiFav AS 'HeroiMaisEscolhido' FROM usuario  group by heroiFav;`;
+        instrucaoSql = `SELECT COUNT(heroiFav) AS 'max_heroi', heroiFav AS 'HeroiMaisEscolhido' FROM usuario  group by heroiFav;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

@@ -120,7 +120,7 @@ ul a:hover {
 
 .containerNavCadastro {
     width: 95%;
-    height: 90vh;
+    height: 95vh;
     margin: auto;
     border-radius: 5px;
     background-color: #f5f5f5;
@@ -212,7 +212,7 @@ ul a:hover {
 
 .cadastroContainer {
     width: 440px;
-    margin: 40px auto;
+    margin: 15px auto;
     position: relative;
     filter: drop-shadow(0 0 3px #403c3c);
 }
