@@ -279,3 +279,56 @@ body {
     background: #06427e;
     border-radius: 3px;
 }
+
+
+/* Pagina Configurações */
+
+.divDemo {
+    background-color: #f5f5f5;
+    width: 60%;
+    height: 420px;
+    margin: 180px auto;
+    border-radius: 5px;
+}
+
+.botaoInfo {
+    width: 40px;
+    height: 40px;
+    background-color: #06427e;
+    margin-left: 415px;
+    border-radius: 50px;
+    margin-top: 20px;
+    border: none;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.botaoInfo:hover {
+    background-color: #577fa6;
+}
+
+.demo {
+    border: 1px solid #C0C0C0;
+    border-collapse: collapse;
+    padding: 5px;
+    color: #06427e;
+    margin: auto;
+}
+
+.demo caption {
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.demo th {
+    border: 1px solid #C0C0C0;
+    padding: 10px;
+    background: #F0F0F0;
+    width: 20vw;
+}
+
+.demo td {
+    border: 1px solid #7d7b7b;
+    padding: 5px;
+    height: 7vh;
+}
