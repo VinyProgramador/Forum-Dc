@@ -265,53 +265,6 @@ body {
 }
 
 
-/* Modal de Configurações */
-
-.modalConfig {
-    position: absolute;
-    background-color: #f5f5f5;
-    width: 30vw;
-    height: 35vh;
-    float: left;
-    margin-left: -80px;
-    border-radius: 5px;
-    margin-top: 200px;
-    filter: drop-shadow(0 0 0.45rem #babfbf);
-    display: none;
-    transition: 500ms;
-    animation: animacaoModalConfig;
-    animation-duration: 500ms;
-}
-
-@keyframes animacaoModalConfig {
-    from {
-        opacity: 2;
-    }
-    from {
-        opacity: 0;
-    }
-}
-
-.modalConfig button {
-    display: flex;
-    float: right;
-    margin: 3px 3px 3px 3px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #06427e;
-    color: #06427e;
-    cursor: pointer;
-}
-
-.modalConfig button:hover {
-    color: #fff;
-    background-color: #06427e;
-}
-
-
 /* Scrool Bar */
 
 ::-webkit-scrollbar {

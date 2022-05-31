@@ -20,6 +20,7 @@
             <div>
                 <h1>Quantidade Usuarios Cadastrados</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ad expedita adipisci consequatur nulla assumenda, dicta deserunt! Corporis, explicabo error vero molestias, nam aut minima saepe, exercitationem blanditiis aspernatur reiciendis.</p>
+                <button><img src="../img/svg/info.svg" alt=""></button>
             </div>
         </div>
         <div class="containerGraficos">
@@ -27,6 +28,7 @@
             <div>
                 <h1>Herois Mais Escolhidos</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ad expedita adipisci consequatur nulla assumenda, dicta deserunt! Corporis, explicabo error vero molestias, nam aut minima saepe, exercitationem blanditiis aspernatur reiciendis.</p>
+                <button><img src="../img/svg/info.svg" alt=""></button>
             </div>
         </div>
     </div>
@@ -139,192 +141,175 @@
 
 
     // grafico2
-function obterDadosGrafico2() {
+    function obterDadosGrafico2() {
 
-fetch(`/dash2/dash2/`, {
-        cache: 'no-store'
-    }).then(function(response) {
-        if (response.ok) {
-            response.json().then(function(resposta) {
-                console.log(resposta);
-                // resposta.reverse();
-                plotarGrafico2(resposta);
-            });
-        } else {
-            console.error('Nenhum dado encontrado ou erro na API');
-        }
-    })
-    .catch(function(error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-    });
-}
-
-function plotarGrafico2(resposta) {
-console.log('iniciando plotagem do gráfico...');
-var xValues = ["Herois mais escolhidos"];
-
-var dados = {
-    labels: [xValues],
-
-    datasets: [{
-        yAxisID: 'y-users',
-        label: 'Batman',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Estelar',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'SuperMan',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Wonder-Woman',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Lanterna-Verde',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Cyborg',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Robin',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Aquaman',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Super-Girl',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    },
-    {
-        yAxisID: 'y-users',
-        label: 'Zatana',
-        borderColor: '#09223c',
-        backgroundColor: '#06427e',
-        fill: true,
-        data: []
-    }
-
-
-
-]
-};
-
-for (i = 0; i < resposta.length; i++) {
-    var registro = resposta[i];
-    console.log(registro);
-
-    if(registro.HeroiMaisEscolhido == "Batman"){
-        dados.datasets[0].data.push(registro.max_heroi);
-    }else if(registro.HeroiMaisEscolhido == "Estelar") {
-        dados.datasets[1].data.push(registro.max_heroi);
-    }
-    else if(registro.HeroiMaisEscolhido == "SuperMan"){
-        dados.datasets[2].data.push(registro.max_heroi);
-    }
-    else if(registro.HeroiMaisEscolhido == "Wonder-Woman"){
-        dados.datasets[3].data.push(registro.max_heroi);
-    }
-    else if(registro.HeroiMaisEscolhido == "Lanterna-Verde"){
-        dados.datasets[4].data.push(registro.max_heroi);
-    }
-    else if(registro.HeroiMaisEscolhido == "Cyborg"){
-        dados.datasets[5].data.push(registro.max_heroi);
-    }
-    else if(registro.HeroiMaisEscolhido == "Robin"){
-        dados.datasets[6].data.push(registro.max_heroi);
-    }
-    else if(registro.HeroiMaisEscolhido == "Aquaman"){
-        dados.datasets[7].data.push(registro.max_heroi);
-    }
-    else if(registro.HeroiMaisEscolhido == "Super-Girl"){
-        dados.datasets[8].data.push(registro.max_heroi);
-    }
-    else {
-        dados.datasets[9].data.push(registro.max_heroi);
-
-    }
-
-
-}
-dados.labels[0] = ('Herois');
-
-
-
-
-console.log(JSON.stringify(dados));
-
-var ctx = myChart2.getContext('2d');
-window.graficoLine = Chart.Bar(ctx, {
-    data: dados,
-    options: {
-        responsive: true,
-        animation: {
-            duration: 500
-        },
-        hoverMode: 'index',
-        stacked: false,
-        title: {
-            display: false,
-            text: 'Dados capturados'
-        },
-        scales: {
-            yAxes: [{
-                type: 'linear',
-                display: true,
-                position: 'left',
-                id: 'y-users',
-                ticks: {
-                    beginAtZero: true,
-                    max: 10,
-                    min: 0
+        fetch(`/dash2/dash2/`, {
+                cache: 'no-store'
+            }).then(function(response) {
+                if (response.ok) {
+                    response.json().then(function(resposta) {
+                        console.log(resposta);
+                        // resposta.reverse();
+                        plotarGrafico2(resposta);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
                 }
-            }]
-        }
+            })
+            .catch(function(error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
-});
-}
 
+    function plotarGrafico2(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+        var xValues = ["Herois mais escolhidos"];
+
+        var dados = {
+            labels: [xValues],
+
+
+            datasets: [{
+                    yAxisID: 'y-users',
+                    label: 'Batman',
+                    borderColor: '#09223c',
+                    backgroundColor: '#000',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Estelar',
+                    borderColor: '#09223c',
+                    backgroundColor: 'red',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'SuperMan',
+                    borderColor: '#09223c',
+                    backgroundColor: '#06427e',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Wonder-Woman',
+                    borderColor: 'pink',
+                    backgroundColor: 'pink',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Lanterna-Verde',
+                    borderColor: 'green',
+                    backgroundColor: 'green',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Cyborg',
+                    borderColor: '#555',
+                    backgroundColor: '#555',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Robin',
+                    borderColor: '#09223c',
+                    backgroundColor: '#7d4138',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Aquaman',
+                    borderColor: '#09223c',
+                    backgroundColor: 'blue',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Super-Girl',
+                    borderColor: '#09223c',
+                    backgroundColor: '#ff0084',
+                    fill: true,
+                    data: []
+                }, {
+                    yAxisID: 'y-users',
+                    label: 'Zatana',
+                    borderColor: '#09223c',
+                    backgroundColor: '#f75e25',
+                    fill: true,
+                    data: []
+                }
+
+
+
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            console.log(registro);
+
+            if (registro.HeroiMaisEscolhido == "Batman") {
+                dados.datasets[0].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "Estelar") {
+                dados.datasets[1].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "SuperMan") {
+                dados.datasets[2].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "Wonder-Woman") {
+                dados.datasets[3].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "Lanterna-Verde") {
+                dados.datasets[4].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "Cyborg") {
+                dados.datasets[5].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "Robin") {
+                dados.datasets[6].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "Aquaman") {
+                dados.datasets[7].data.push(registro.max_heroi);
+            } else if (registro.HeroiMaisEscolhido == "Super-Girl") {
+                dados.datasets[8].data.push(registro.max_heroi);
+            } else {
+                dados.datasets[9].data.push(registro.max_heroi);
+
+            }
+
+
+        }
+        dados.labels[0] = ('Herois');
+
+
+
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = myChart2.getContext('2d');
+        window.graficoLine = Chart.Bar(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: {
+                    duration: 500
+                },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-users',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 25,
+                            min: 0
+                        }
+                    }]
+                }
+            }
+        });
+    }
 </script>

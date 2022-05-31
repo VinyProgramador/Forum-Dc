@@ -220,3 +220,20 @@ span {
     text-align: center;
     margin-top: 65px;
 }
+
+.container button {
+    background-color: #06427e;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 5px;
+    cursor: pointer;
+    border: 2px solid #4c4a4a;
+}
+
+.container button img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
