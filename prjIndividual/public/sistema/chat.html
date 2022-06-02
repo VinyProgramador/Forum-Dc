@@ -23,6 +23,38 @@
                 <span id="mudarImgId">
                     <img class="perfilUserImg" alt="">
                 </span>
+
+                <div id="divConfig" class="divDemo">
+                    <button onclick="fecharModalConfig()" class="exit">x</button>
+                    <table class="demo">
+                        <caption>Configurações:</caption>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mudar Nome</td>
+                                <td><button class="buttonChanges">Mudar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Mudar email</td>
+                                <td><button class="buttonChanges">Mudar</button></td>
+                            </tr>
+                            <tr>
+                                <td>Escolher novo Heroi Favorito</td>
+                                <td><button class="buttonChanges">Mudar</button></td>
+                            </tr>
+                            <tr>
+                                <td style="color: red;">Deleter conta</td>
+                                <td><button style="background-color: red;" class="buttonChanges">Deletar</button></td>
+                            </tr>
+                            <tbody>
+                    </table>
+                </div>
+
                 <div id="modalInfoId" class="modalInfo">
                     <button onclick="fecharModalInfo()">X</button>
                     <div>
@@ -42,7 +74,7 @@
             <div class="footer">
                 <button>?</button>
                 <button onclick="modalInfo()">!</button>
-                <a href="info.html"><button><img src="../img/svg/config.svg" alt=""></button></a>
+                <button onclick="modalConfig()"><img src="../img/svg/config.svg" alt=""></button>
 
             </div>
         </div>
@@ -126,7 +158,7 @@
                     },
                 })
                 setTimeout(() => {
-                    window.location = "mural.html";
+                    window.location = "chat.html";
 
                 }, '1000')
                 limparFormulario();
