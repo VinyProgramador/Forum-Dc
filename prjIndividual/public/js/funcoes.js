@@ -62,6 +62,11 @@ function imgDePerfil() {
 
 function mostarLoading() {
     cssLoading.style.display = 'block'
+
+    setTimeout(() => {;
+
+        cssLoading.style.display = 'none'
+    }, '3000')
 }
 
 // sessão
@@ -71,18 +76,21 @@ function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
     var heroiFavorito = sessionStorage.HEROI_USUARIO;
+    var dataDeEntrada = sessionStorage.DATA_ENTRADA_USUARIO;
+
 
 
     var nomeUsuario = document.getElementById("b_usuario");
 
     if (email != null && nome != null) {
-        // alert(`Bem vindo Usuario ${nome}`)
         if (nomeUsuario != undefined) {
             nomeUsuario.innerHTML = email;
         }
         b_usuario.innerHTML = nome;
         b_email.innerHTML = email;
         b_heroi.innerHTML = heroiFavorito;
+        b_dtaHeroi.innerHTML = dataDeEntrada;
+
 
         // finalizarAguardar();
     } else {

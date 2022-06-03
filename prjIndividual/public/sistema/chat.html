@@ -33,9 +33,11 @@
 
                 <h2>Biografia</h2>
                 <p><img src="../img/svg/user.svg" alt=""> <span id="b_usuario">usuário</span></p>
-                <p><img src="../img/svg/mail.svg" alt=""> <span id="b_email"></span></p>
                 <p><img src="../img/svg/star.svg" alt=""> Heroi Favorito: <span id="b_heroi"> </span></span>
-                </p>
+                    <p><img src="../img/svg/mail.svg" alt="">Email: <span id="b_email"></span></p>
+                    <p><img src="../img/svg/date.svg" alt=""> Data de cadastro no forum: <span id="b_dtaHeroi"> </span></span>
+
+                    </p>
             </div>
 
             <div class="footer">
@@ -101,6 +103,7 @@
         var corpo = {
             titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value
+
         }
 
         fetch(`/avisos/publicar/${idUsuario}`, {
