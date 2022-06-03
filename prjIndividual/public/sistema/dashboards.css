@@ -223,12 +223,12 @@ body {
     display: none;
     transition: 500ms;
     animation: animacaoModalInfo;
-    animation-duration: 500ms;
+    animation-duration: 900ms;
 }
 
 .modalInfo div {
     background-color: #d7dddd;
-    width: 85%;
+    width: 89%;
     height: 80%;
     margin: 30px auto;
     border-radius: 5px;
@@ -248,20 +248,13 @@ body {
 .modalInfo button {
     display: flex;
     float: right;
-    margin: 8px 5px 3px 3px;
+    margin: 3px 3px 3px 6px;
     width: 20px;
     height: 20px;
     border-radius: 50px;
     align-items: center;
     justify-content: center;
-    border: 2px solid #06427e;
-    color: #06427e;
     cursor: pointer;
-}
-
-.modalInfo button:hover {
-    color: #fff;
-    background-color: #06427e;
 }
 
 
@@ -286,14 +279,15 @@ body {
 .divDemo {
     background-color: #f5f5f5;
     width: 68%;
-    height: 300px;
-    margin: 60px auto;
+    height: 250px;
+    margin: 150px auto;
     border-radius: 5px;
     margin-left: -140px;
     display: none;
     position: absolute;
     border: 1px solid #7d7b7b;
     padding: 10px;
+    animation: demoAnimation;
 }
 
 .divDemo .exit {
@@ -321,6 +315,15 @@ body {
     padding: 5px;
     color: #06427e;
     margin: auto;
+}
+
+@keyframes demoAnimation {
+    from {
+        opacity: 2;
+    }
+    from {
+        opacity: 0;
+    }
 }
 
 .demo caption {

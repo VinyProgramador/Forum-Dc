@@ -99,7 +99,7 @@
 
 
                     Swal.fire({
-                        position: 'top-start',
+                        position: 'top-center',
                         icon: 'success',
                         title: 'Logado com sucesso!',
                         showConfirmButton: false,
@@ -113,7 +113,17 @@
 
             } else {
 
-                console.log("Houve um erro ao tentar realizar o login!");
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'error',
+                    title: 'Senha ou Email incorretos!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(() => {;
+
+                    window.location = "login.html"
+                }, '2000')
 
                 resposta.text().then(texto => {
                     console.error(texto);

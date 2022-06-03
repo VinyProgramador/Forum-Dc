@@ -24,37 +24,6 @@
                     <img class="perfilUserImg" alt="">
                 </span>
 
-                <div id="divConfig" class="divDemo">
-                    <button onclick="fecharModalConfig()" class="exit">x</button>
-                    <table class="demo">
-                        <caption>Configurações:</caption>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Mudar Nome</td>
-                                <td><button class="buttonChanges">Mudar</button></td>
-                            </tr>
-                            <tr>
-                                <td>Mudar email</td>
-                                <td><button class="buttonChanges">Mudar</button></td>
-                            </tr>
-                            <tr>
-                                <td>Escolher novo Heroi Favorito</td>
-                                <td><button class="buttonChanges">Mudar</button></td>
-                            </tr>
-                            <tr>
-                                <td style="color: red;">Deleter conta</td>
-                                <td><button style="background-color: red;" class="buttonChanges">Deletar</button></td>
-                            </tr>
-                            <tbody>
-                    </table>
-                </div>
-
                 <div id="modalInfoId" class="modalInfo">
                     <button onclick="fecharModalInfo()">X</button>
                     <div>
@@ -67,14 +36,13 @@
                 <p><img src="../img/svg/mail.svg" alt=""> <span id="b_email"></span></p>
                 <p><img src="../img/svg/star.svg" alt=""> Heroi Favorito: <span id="b_heroi"> </span></span>
                 </p>
-                <!-- <p><img src="../img/svg/date.svg" alt="">Data de entrada no forum:</span> -->
-                </p>
             </div>
 
             <div class="footer">
-                <button>?</button>
+                <a href="https://forumdc.on.spiceworks.com/portal"><button>?</button></a>
                 <button onclick="modalInfo()">!</button>
-                <button onclick="modalConfig()"><img src="../img/svg/config.svg" alt=""></button>
+                <button onclick="limparSessao()"><img src="../img/svg/sair.svg" alt=""></button>
+
 
             </div>
         </div>
@@ -177,35 +145,6 @@
 
     }
 
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/dashboard/edicao-aviso.html"
-
-    }
-
-    function deletar(idAviso) {
-        console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function(resposta) {
-
-            if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function(resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-    }
 
     function atualizarFeed() {
         //aguardar();
@@ -269,14 +208,12 @@
                         feed.appendChild(divPublicacao);
                     }
 
-                    // finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function(resposta) {
             console.error(resposta);
-            // finalizarAguardar();
         });
     }
 

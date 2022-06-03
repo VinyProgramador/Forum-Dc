@@ -60,6 +60,9 @@ function imgDePerfil() {
     }
 }
 
+function mostarLoading() {
+    cssLoading.style.display = 'block'
+}
 
 // sessão
 function validarSessao() {

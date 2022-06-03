@@ -10,14 +10,16 @@ dataCadastro datetime default current_timestamp,
 senha VARCHAR(65)
 );
 
-SELECT nome AS 'Nome do usuario', dataCadastro AS 'Hora e data de cadastro no forum' FROM usuario WHERE id=03;
-
-
-SELECT*FROM usuario;
-CREATE TABLE aviso (
+CREATE TABLE chat (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
     descricao VARCHAR(150),
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-); 
+);
+
+-- Select que traz a quantidade de usuarios:
+SELECT COUNT(id) AS 'QtdUsuarios' FROM usuario;
+
+-- Select que traz o heroi mais escolhido no cadastro e a quantidade de vezes que ele foi escolhido:
+SELECT COUNT(heroiFav) AS 'max_heroi', heroiFav AS 'HeroiMaisEscolhido' FROM usuario  group by heroiFav;

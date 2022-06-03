@@ -21,6 +21,24 @@ span {
     font-weight: 700;
 }
 
+#cssLoading {
+    height: 80px;
+    width: 80px;
+    border: 6px solid #a6a1a1;
+    position: absolute;
+    margin: 200px 0px 0px 520px;
+    border-top-color: #06427e;
+    animation: carregar 1s infinite;
+    border-radius: 50px;
+    display: none;
+}
+
+@keyframes carregar {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
 .chatUsuario {
     width: 75vw;
     background-color: beige;
@@ -227,7 +245,6 @@ span {
     height: 40px;
     border-radius: 50px;
     margin-top: 5px;
-    cursor: pointer;
     border: 2px solid #4c4a4a;
 }
 
