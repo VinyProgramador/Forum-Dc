@@ -66,6 +66,7 @@ function mostarLoading() {
     setTimeout(() => {;
 
         cssLoading.style.display = 'none'
+        mostrarConteudo.style.display = 'block'
     }, '3000')
 }
 

@@ -254,3 +254,33 @@ span {
     align-items: center;
     margin: auto;
 }
+
+.divInfo {
+    display: none;
+}
+
+.imgsFilmes {
+    width: 45vw;
+    height: 40vh;
+    background-color: #06427e;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 45px;
+    margin: auto;
+}
+
+.imgsFilmes img {
+    width: 170px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 500ms;
+    border: 2px solid #f5f5f5;
+}
+
+.imgsFilmes img:hover {
+    transform: scale(105%, 105%);
+}
