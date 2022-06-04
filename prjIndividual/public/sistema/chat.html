@@ -72,8 +72,7 @@
         </div>
         <div class="chatDiv">
             <form id="form_postagem" method="post" onsubmit="return publicar()">
-                <input style="display: none;" name="titulo" id="titulo" maxlength="100" type="text"> Mensagem:
-                <input name="descricao" id="textarea_descricao" maxlength="100"></input>
+                Mensagem:<input name="descricao" id="textarea_descricao" maxlength="100"></input>
                 <button>Enviar</button>
             </form>
         </div>
@@ -111,7 +110,6 @@
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
-            titulo: form_postagem.titulo.value,
             descricao: form_postagem.descricao.value
 
         }
@@ -182,7 +180,6 @@
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
                         var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
                         var divButtons = document.createElement("div");
@@ -196,9 +193,7 @@
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
                         spanNome.className = "publicacao-nome";
-                        spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
 
                         divButtons.className = "div-buttons"
@@ -213,7 +208,6 @@
 
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
                         divButtons.appendChild(btnEditar);

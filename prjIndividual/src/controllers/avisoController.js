@@ -46,18 +46,15 @@ function listarPorUsuario(req, res) {
 
 
 function publicar(req, res) {
-    var titulo = req.body.titulo;
     var descricao = req.body.descricao;
     var idUsuario = req.params.idUsuario;
 
-    if (titulo == undefined) {
-        res.status(400).send("O título está indefinido!");
-    } else if (descricao == undefined) {
+    if (descricao == undefined) {
         res.status(400).send("A descrição está indefinido!");
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, descricao, idUsuario)
+        avisoModel.publicar(descricao, idUsuario)
             .then(
                 function(resultado) {
                     res.json(resultado);
