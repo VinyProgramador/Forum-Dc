@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DC | Chat</title>
-    <link rel="stylesheet" href="./dashboards.css">
+    <link rel="stylesheet" href="chat.css">
     <script src="../js/funcoes.js"></script>
     <script src="../js/modals.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -31,6 +31,16 @@
                     </div>
                 </div>
 
+                <div id="Help" class="modalHelp">
+                    <button style="width: 20px; height: 20px; border-radius: 50px; margin-top: 3px; margin-right: 3px;" onclick="fecharModalHelp()">X</button>
+                    <h5>Relate seu problema.</h5>
+                    <form action="https://formsubmit.co/vinicius.nunes@sptech.school" method="POST">
+                        Seu Nome<input type="text" name="name" required> Seu email<input type="email" name="email" required>
+                        <input type="hidden" name="_captcha" value="false"> Seu Problema?<textarea class="texteArea" name="mensagem"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+
                 <h2>Biografia</h2>
                 <p><img src="../img/svg/user.svg" alt=""> <span id="b_usuario">usuário</span></p>
                 <p><img src="../img/svg/star.svg" alt=""> Heroi Favorito: <span id="b_heroi"> </span></span>
@@ -41,7 +51,7 @@
             </div>
 
             <div class="footer">
-                <a href="https://forumdc.on.spiceworks.com/portal"><button>?</button></a>
+                <button onclick="modalHelp()">?</button>
                 <button onclick="modalInfo()">!</button>
                 <button onclick="limparSessao()"><img src="../img/svg/sair.svg" alt=""></button>
 

@@ -9,11 +9,11 @@ function fecharModalInfo() {
 
 }
 
-function modalConfig() {
-    divConfig.style.display = 'block'
+function modalHelp() {
+    Help.style.display = 'block';
+
 }
 
-function fecharModalConfig() {
-    divConfig.style.display = 'none';
-
+function fecharModalHelp() {
+    Help.style.display = 'none';
 }
