@@ -8,9 +8,9 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [X] Telas:index, Cadastro, Login, Chat, Dashboard.
+- [X] Telas: index, Cadastro, Login, Chat, Dashboard.
 - [X] Conectar com a API Node (para BackEnd).
 - [X] Conectar com o Banco de Dados.
 - [X] Fazer chat funcionar.
-- [ ] Fazer Graficos Consumir informações do Banco.
+- [X] Fazer Graficos Consumir informações do Banco.
   
