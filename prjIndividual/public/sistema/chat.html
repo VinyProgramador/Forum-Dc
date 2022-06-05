@@ -27,7 +27,8 @@
                 <div id="modalInfoId" class="modalInfo">
                     <button onclick="fecharModalInfo()">X</button>
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos delectus voluptas praesentium porro deleniti architecto ipsum nemo sint, tempora dolore. Ad ipsum quidem numquam sunt, cumque modi doloremque dolores doloribus.</p>
+                        <p>1° - Não ofender ou desrespeitar qualquer usuario do Chat;<br> 2° - Não xingar, não falar palavrão ou conteúdo adulto no Chat;<br> 3° - Não disponibilizar links, para isso, use o chat privado;<br> 4° - Não fazer divulgação de outros
+                            sites ou blogs que não seja de nossos parceiros.</p>
                     </div>
                 </div>
 
@@ -237,5 +238,13 @@
         finalizarAguardar();
 
         return false;
+    }
+
+    function editarNome(idAviso) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
+        console.log("cliquei em editar - " + idAviso);
+        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+        window.location = "/dashboard/edicao-aviso.html"
+
     }
 </script>

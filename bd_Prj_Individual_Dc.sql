@@ -17,16 +17,11 @@ CREATE TABLE chat (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUser)
 );
 
-select * from chat;
+select * from usuario;
 
-TRUNCATE TABLE  chat;
 
 -- Select que traz a quantidade de usuarios:
 SELECT COUNT(idUser) AS 'QtdUsuarios' FROM usuario;
 
 -- Select que traz o heroi mais escolhido no cadastro e a quantidade de vezes que ele foi escolhido:
 SELECT COUNT(heroiFav) AS 'max_heroi', heroiFav AS 'HeroiMaisEscolhido' FROM usuario  group by heroiFav;
-
--- Query que deletea conta de usuario xpto
-LEFT OUTER JOIN usuario p ON c.idUser = p.id
-WHERE p.id = 1;
