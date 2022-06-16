@@ -13,4 +13,4 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [X] Conectar com o Banco de Dados.
 - [X] Fazer chat funcionar.
 - [X] Fazer Graficos Consumir informações do Banco.
-  
+- [X] Projeto finalizado.  
